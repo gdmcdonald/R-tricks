@@ -21,3 +21,8 @@ output:
 `2 2 5        1 8`
 
 `3 3 6        2 9`
+
+## inf.omit
+remove non-finite values, much like na.omit
+e.g.
+inf.omit(df)
