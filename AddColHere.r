@@ -1,4 +1,4 @@
-AddColHere<-function(addCol,DF,afterCol=NULL,beforeCol=NULL ){
+AddColHere<-function(DF,addCol,afterCol=NULL,beforeCol=NULL ){
   if(!is.null(afterCol)){
     if(is.null(beforeCol)) {
       #afterCol populated, beforeCol not
