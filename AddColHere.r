@@ -2,13 +2,18 @@ AddColHere<-function(DF,addCol,afterCol=NULL,beforeCol=NULL ){
   if(!is.null(afterCol)){
     if(is.null(beforeCol)) {
       #afterCol populated, beforeCol not
-      afterColNumber<-which(names(DF)==afterCol)
+      if (is.character(afterCol)){
+        afterColNumber<-which(names(DF)==afterCol)
+      } else if (is.numeric(afterCol)){afterColNumber<-round(afterCol)}
       ldf<-length(DF)
-      
-      DF<-cbind(DF,addCol) #add col to end of df then move
       if(afterColNumber<ldf){
-        DF<-DF[,c(1:afterColNumber,ldf+1,(afterColNumber+1):ldf)]
-      }
+        if (afterColNumber<1) {
+          DF<-cbind(addCol,DF)
+        } else {
+          DF<-cbind(DF,addCol) #add col to end of df then move
+          DF<-DF[,c(1:afterColNumber,ldf+1,(afterColNumber+1):ldf)]
+        }
+      } else {DF<-cbind(DF,addCol)}
     } else {
       #aftercol populated, beforecol populated
       stop("should only have one of beforeCol & afterCol")
@@ -21,12 +26,18 @@ AddColHere<-function(DF,addCol,afterCol=NULL,beforeCol=NULL ){
       
       
       # beforeCol populated, afterCol not
-      beforeColNumber<-which(names(DF)==beforeCol)
+      if (is.character(beforeCol)){
+        beforeColNumber<-which(names(DF)==beforeCol)
+      } else if (is.numeric(beforeCol)){beforeColNumber<-beforeCol}
       ldf<-length(DF)
-      DF<-cbind(addCol,DF) #add col to beginning of DF then move, 
-      #saves some conditional logic compared to adding it after.
-      if(beforeColNumber>1){
-        DF<-DF[,c(2:beforeColNumber,1,(beforeColNumber+1):(ldf+1))]
+      if (beforeColNumber>ldf){
+        DF<-cbind(DF,addCol)
+      } else {
+        DF<-cbind(addCol,DF) #add col to beginning of DF then move, 
+        #saves some conditional logic compared to adding it after.
+        if(beforeColNumber>1){
+          DF<-DF[,c(2:beforeColNumber,1,(beforeColNumber+1):(ldf+1))]
+        }
       }
     }
     
@@ -36,3 +47,4 @@ AddColHere<-function(DF,addCol,afterCol=NULL,beforeCol=NULL ){
   return(DF)
   
 }
+
