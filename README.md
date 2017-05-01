@@ -25,4 +25,6 @@ output:
 ## inf.omit
 remove non-finite values, much like na.omit
 e.g.
-inf.omit(df)
+
+
+`inf.omit(df)`
