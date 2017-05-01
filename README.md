@@ -10,8 +10,15 @@ e.g.
 
 `myCol<-0:2`
 
+
 `AddColHere(df,myCol,afterCol = "b")`
+
+or
+
+`AddColHere(df,myCol,afterCol = 2)`
+
 or with dplyr
+
 `df %>% AddColHere(myCol,afterCol = "b")`
 
 output:
