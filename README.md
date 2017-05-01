@@ -2,8 +2,8 @@
 Short functions to make life easier in R
 
 
-## AddColHere
-Function to add a column in the middle of a dataframe 
+## AddColHere / AddRowHere
+Function to add a column / row in the middle of a dataframe 
 e.g.
 
 `df<-[a=1:3,b=4:6,c=7:9]`
