@@ -26,5 +26,10 @@ output:
 remove non-finite values, much like na.omit
 e.g.
 
+`(vec<-c(1,2,3/0))`
 
-`inf.omit(df)`
+1   2 Inf
+
+`inf.omit(vec)`
+
+1 2
