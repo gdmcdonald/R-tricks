@@ -52,6 +52,9 @@ compareColNames(df1,df2)
 ```
 
 [1] "These columns are in the first but not the second df:"
+
 [1] "c"
+
 [1] "These columns are in the second but not the first df:"
+
 [1] "d"
