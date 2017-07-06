@@ -85,5 +85,5 @@ output:
 Reads in all sheets in all .xlsx files in a given directory, into a list of dataframes, each dataframe named like "<Sheet>-<File>.xlsx"
 Usage:
 ```
-readAllFilesInFolder("/path/to/folder/")
+myListOfDataframes<-readAllFilesInFolder("/path/to/folder/")
 ```
