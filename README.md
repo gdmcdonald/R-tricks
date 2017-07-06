@@ -78,3 +78,12 @@ output:
 |3 |3 |4 | 
 |4| 1 |6 |
 |5 |2 |7 |  
+
+
+# readAllFilesInFolder
+
+Reads all sheets in all xlsx files in a given directory.
+Usage:
+```
+readAllFilesInFolder("/path/to/folder/")
+```
