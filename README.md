@@ -6,16 +6,16 @@ Short functions to make life easier in R
 Function to add a column / row in the middle of a dataframe 
 e.g.
 
-`df<-[a=1:3,b=4:6,c=7:9]`
+`df <- [a=1:3, b=4:6, c=7:9]`
 
-`myCol<-0:2`
+`myCol <- 0:2`
 
 
-`AddColHere(df,myCol,afterCol = "b")`
+`AddColHere(df, myCol, afterCol = "b")`
 
 or
 
-`AddColHere(df,myCol,afterCol = 2)`
+`AddColHere(df, myCol, afterCol = 2)`
 
 or with dplyr
 
@@ -33,7 +33,7 @@ output:
 remove non-finite values, much like na.omit
 e.g.
 
-`(vec<-c(1,2,3/0))`
+`(vec <- c(1, 2, 3/0))`
 
 1   2 Inf
 
@@ -46,9 +46,9 @@ compare the column names in two dataframes and output the differences to the com
 e.g.
 
 ```
-df1=data.frame(a=1:3,b=2:4,c=4:6)
-df2=data.frame(a=1:5,b=6:10,d=10:14)
-compareColNames(df1,df2)
+df1 = data.frame(a=1:3, b=2:4, c=4:6)
+df2 = data.frame(a=1:5, b=6:10, d=10:14)
+compareColNames(df1, df2)
 ```
 
 [1] "These columns are in the first but not the second df:"
@@ -64,9 +64,9 @@ compareColNames(df1,df2)
 like rbind but will omit columns which aren't in both dataframes.
 Example:
 ```
-df1=data.frame(a=1:3,b=2:4,c=4:6)
-df2=data.frame(a=1:2,b=6:7,d=10:11)
-(out<-rbindSimmilar(df1,df2))
+df1 = data.frame(a=1:3, b=2:4, c=4:6)
+df2 = data.frame(a=1:2, b=6:7, d=10:11)
+(out <- rbindSimmilar(df1, df2))
 ```
 
 output:
@@ -85,5 +85,5 @@ output:
 Reads in all sheets in all .xlsx files in a given directory, into a list of dataframes, each dataframe named like "<Sheet>-<File>.xlsx"
 Usage:
 ```
-myListOfDataframes<-readAllFilesInFolder("/path/to/folder/")
+myListOfDataframes <- readAllFilesInFolder("/path/to/folder/")
 ```
