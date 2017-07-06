@@ -3,7 +3,7 @@ Short functions to make life easier in R
 
 
 ## AddColHere / AddRowHere
-Function to add a column / row in the middle of a dataframe 
+Function to add a column / row in the middle of a dataframe
 e.g.
 
 `df <- [a=1:3, b=4:6, c=7:9]`
@@ -74,13 +74,13 @@ output:
 ||  a |b |
 |---|---|---|
 |1| 1 |2 |
-|2 |2 |3 |  
-|3 |3 |4 | 
+|2 |2 |3 |
+|3 |3 |4 |
 |4| 1 |6 |
-|5 |2 |7 |  
+|5 |2 |7 |
 
 
-# readAllFilesInFolder
+## readAllFilesInFolder
 
 Reads in all sheets in all .xlsx files in a given directory, into a list of dataframes, each dataframe named like "<Sheet>-<File>.xlsx"
 Usage:
