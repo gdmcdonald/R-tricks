@@ -40,3 +40,41 @@ e.g.
 `inf.omit(vec)`
 
 1 2
+
+## compareColNames
+compare the column names in two dataframes and output the differences to the command window.
+e.g.
+
+```
+df1=data.frame(a=1:3,b=2:4,c=4:6)
+df2=data.frame(a=1:5,b=6:10,d=10:14)
+compareColNames(df1,df2)
+```
+
+[1] "These columns are in the first but not the second df:"
+
+[1] "c"
+
+[1] "These columns are in the second but not the first df:"
+
+[1] "d"
+
+
+## rbindSimmilar
+like rbind but will omit columns which aren't in both dataframes.
+Example:
+```
+df1=data.frame(a=1:3,b=2:4,c=4:6)
+df2=data.frame(a=1:2,b=6:7,d=10:11)
+(out<-rbindSimmilar(df1,df2))
+```
+
+output:
+
+||  a |b |
+|---|---|---|
+|1| 1 |2 |
+|2 |2 |3 |  
+|3 |3 |4 | 
+|4| 1 |6 |
+|5 |2 |7 |  
