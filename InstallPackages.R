@@ -1,0 +1,9 @@
+install.packages(c("ggplot2",
+                   "dplyr",
+                   "tidyr",
+                   "rgl",
+                   "lubridate",
+                   "stringdist",
+                   "fuzzyjoin",
+                   "pracma",
+                   "NbClust"))
