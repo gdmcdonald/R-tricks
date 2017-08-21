@@ -2,13 +2,13 @@ library(grid)
 library(gridExtra)
 library(dplyr)
 
-AlignDateAxes<-function(plotList){
+AlignDateAxes2<-function(plotList){
   
   xlims<-vapply(plotList,
                 function(plotgoeshere){
-                  ggplot_build(plotgoeshere)$layout$panel_ranges[[1]]$x.range
-                },
-                FUN.VALUE = c(2,3.3))
+                      ggplot_build(plotgoeshere)$layout$panel_ranges[[1]]$x.range
+                                        },
+                  FUN.VALUE = c(2,3.3))
   
   x_min<-min(xlims)%>%as_datetime()
   x_max<-max(xlims)%>%as_datetime()
@@ -36,5 +36,5 @@ PlotThemAll<-function(plotList){
 }
 
 AlignDatesAndPlot<-function(plotList){
-  PlotThemAll(AlignDateAxes(plotList))
+  PlotThemAll(AlignDateAxes2(plotList))
 }
