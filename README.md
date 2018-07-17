@@ -1,6 +1,28 @@
 # R-tricks
 Short functions to make life easier in R
 
+# filter_group()
+Filter grouped data and keep each group in which one or more rows match a given condition.
+
+Example: get all cars by manufacturers who make 3 cyl cars:
+```
+MASS::Cars93 %>%
+    group_by(Manufacturer) %>%
+    filter_group(Cylinders==3) %>%
+    ungroup() %>%
+    select(Manufacturer,Model,Cylinders)
+```
+will output
+```
+  Manufacturer Model  Cylinders
+  <fct>        <fct>  <fct>    
+1 Geo          Metro  3        
+2 Geo          Storm  4        
+3 Subaru       Justy  3        
+4 Subaru       Loyale 4        
+5 Subaru       Legacy 4        
+6 Suzuki       Swift  3   
+```
 
 ## AddColHere / AddRowHere
 Function to add a column / row in the middle of a dataframe
