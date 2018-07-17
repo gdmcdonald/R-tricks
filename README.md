@@ -1,7 +1,7 @@
 # R-tricks
 Short functions to make life easier in R
 
-# filter_group()
+## filter_group()
 Filter grouped data and keep each group in which one or more rows match a given condition.
 
 Example: get all cars by manufacturers who make 3 cyl cars:
@@ -51,7 +51,17 @@ output:
 |2 |2 |5    |    1 |8|
 |3 |3 |6      |  2 |9|
 
-## inf.omit
+## fac2num()
+Convert the names of each level of a factor to numeric.
+e.g.
+```
+my_factor<-factor(c("1","4","5"))
+fac2num(my_factor)
+```
+```
+[1] 1 4 5
+```
+## inf.omit()
 remove non-finite values, much like na.omit
 e.g.
 
@@ -63,7 +73,7 @@ e.g.
 
 1 2
 
-## compareColNames
+## compareColNames()
 compare the column names in two dataframes and output the differences to the command window.
 e.g.
 
